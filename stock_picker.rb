@@ -20,7 +20,12 @@ def stock_picker(stock_prices)
             max_return
         end
     end
-    [best_day[:buy_day], best_day[:sell_day]]
+    if best_day[:buy_day] == best_day[:sell_day]
+        nil
+    else
+        [best_day[:buy_day], best_day[:sell_day]]
+    end
 end
 
 p stock_picker([17,3,6,9,15,8,6,1,10])
+p stock_picker([10,9,8,7,6,5,4,3,2,1])
